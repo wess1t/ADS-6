@@ -28,12 +28,13 @@ class TPQueue {
         }
         N* current = head;
         while (current->next != nullptr &&
-               current->next->data.prior >= item.prior)
+               current->next->data.prior >= item.prior) 
             current = current->next;
 
         newNode->next = current->next;
         current->next = newNode;
     }
+
     T pop() {
         N* temp = head;
         T res = temp->data;
