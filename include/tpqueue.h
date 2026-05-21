@@ -8,12 +8,12 @@ class TPQueue {
     struct N {
         T data;
         N* next;
-        N(const T& value) : data(value), next(nullptr) {}
+        explicit N(const T& value) : data(value), next(nullptr) {}
     };
     N* head;
  public:
-
     TPQueue() : head(nullptr) {}
+
     ~TPQueue() {
         while (head != nullptr)
             pop();
@@ -30,10 +30,10 @@ class TPQueue {
         while (current->next != nullptr &&
                current->next->data.prior >= item.prior)
             current = current->next;
+
         newNode->next = current->next;
         current->next = newNode;
     }
-
     T pop() {
         N* temp = head;
         T res = temp->data;
