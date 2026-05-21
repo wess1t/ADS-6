@@ -28,7 +28,7 @@ class TPQueue {
         }
         N* current = head;
         while (current->next != nullptr &&
-               current->next->data.prior >= item.prior) 
+               current->next->data.prior >= item.prior)
             current = current->next;
 
         newNode->next = current->next;
